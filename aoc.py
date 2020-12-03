@@ -5,7 +5,7 @@ name = f'day{argv[1]}'
 notimpl = lambda _: 'not implemented'
 
 day_module = __import__(name)
-day_input = open(f'inputs/{name}.txt').readlines()
+day_input = [line.strip() for line in open(f'inputs/{name}.txt').readlines()]
 
 day_first = getattr(day_module, 'first', notimpl)
 day_second = getattr(day_module, 'second', notimpl)
