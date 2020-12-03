@@ -2,14 +2,7 @@ from functools import reduce
 from operator import mul
 
 def check_slope(map_lines, x_offset, y_offset):
-    row_length = len(map_lines[0])
-    x = 0
-    trees_count = 0
-    for row in map_lines[::y_offset]:
-        trees_count += 1 if row[x] == '#' else 0
-        x += x_offset
-        x %= row_length
-    return trees_count
+    return sum([1 for i, line in enumerate(map_lines[::y_offset]) if line[(i * x_offset) % len(line)] == '#'])
 
 def first(map_lines):
     return check_slope(map_lines, 3, 1)
