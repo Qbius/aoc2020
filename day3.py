@@ -2,7 +2,7 @@ from functools import reduce
 from operator import mul
 
 def check_slope(map_lines, x_offset, y_offset):
-    return sum([1 for i, line in enumerate(map_lines[::y_offset]) if line[(i * x_offset) % len(line)] == '#'])
+    return len([line for i, line in enumerate(map_lines[::y_offset]) if line[(i * x_offset) % len(line)] == '#'])
 
 def first(map_lines):
     return check_slope(map_lines, 3, 1)
