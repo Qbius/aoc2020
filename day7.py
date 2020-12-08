@@ -10,7 +10,6 @@ def merge_dicts(a, b):
 
 def first(lines: regex(r'([a-z ]+) bags contain ([a-z\d ,]+)', (str, str))):
     bags_dict = {color: findall(r'\d+ ([a-z ]+) (?:bag|bags)', der_bags) for color, der_bags in lines}
-    def contains_bag()
     to_find = {'shiny gold'}
     to_find_old = None
     while to_find != to_find_old:
