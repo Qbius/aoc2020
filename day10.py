@@ -5,7 +5,6 @@ from operator import mul
 def first(lines: int):
     srt = [0] + sorted(lines) + [max(lines) + 3]
     diffs = [srt[i] - srt[i - 1] for i in range(1, len(srt))]
-    print(diffs)
     return diffs.count(1) * diffs.count(3)
 
 def second(lines: int):
